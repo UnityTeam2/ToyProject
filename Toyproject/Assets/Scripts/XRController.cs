@@ -17,7 +17,7 @@ public class XRController : MonoBehaviour
         activateRef = targetCont.activateAction.reference;
         activateRef.action.performed += delegate (InputAction.CallbackContext context)
         {
-            gun.Startfiring();
+            gun.StartFiring();
         };
         activateRef.action.canceled += delegate (InputAction.CallbackContext context)
         {
