@@ -346,8 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dronePrefab: {fileID: 6281934635052164349, guid: a7706cc0effb99949963305899b2354d, type: 3}
   playerTransform: {fileID: 2104811670}
-  maxDrones: 7
-  spawnInterval: 5
+  maxDrones: 70
+  spawnInterval: 0.5
   spawnDistance: 10
 --- !u!4 &1444749552
 Transform:
