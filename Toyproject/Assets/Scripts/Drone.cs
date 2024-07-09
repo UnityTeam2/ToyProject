@@ -6,30 +6,37 @@ public class Drone : MonoBehaviour
 {
     public float HP = 100;
     public GameObject bulletPrefab;
-    public Transform firePoint; 
-    private GameObject target;
-    
+    public Transform firePoint;
+    private Transform target;
+
+    public delegate void DroneDestroyed();
+    public event DroneDestroyed OnDestroyed;
 
     private void Start()
     {
-        target = GameObject.FindWithTag("Player");
         StartCoroutine(FireCoroutine());
     }
+
     private void Update()
     {
-        transform.LookAt(target.transform);
+        if (target != null)
+        {
+            transform.LookAt(target);
+        }
     }
-
 
     IEnumerator FireCoroutine()
     {
         while (true)
         {
-            Vector3 direction = (target.transform.position - firePoint.position).normalized;
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(direction));
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
-                rb.AddForce(direction * 70, ForceMode.VelocityChange);
+            if (target != null)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                if (rb != null)
+                    rb.AddForce(firePoint.forward * 70, ForceMode.VelocityChange);
+                Destroy(gameObject, 5);
+            }
             yield return new WaitForSeconds(3);
         }
     }
@@ -37,8 +44,16 @@ public class Drone : MonoBehaviour
     public void GetDamage(float damage)
     {
         HP -= damage;
-        if (HP < 0)
+        if (HP <= 0)
+        {
+            if (OnDestroyed != null)
+                OnDestroyed.Invoke();
             Destroy(gameObject);
+        }
     }
 
+    public void SetTarget(Transform targetTransform)
+    {
+        target = targetTransform;
+    }
 }
