@@ -10,7 +10,10 @@ public class Drone : MonoBehaviour
     {
         HP -= damage;
         if (HP < 0)
+        {
+            //Instantiate(destructionParticlesPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
     }
 
 }
