@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444749552}
-  - component: {fileID: 1444749551}
+  - component: {fileID: 1444749553}
   m_Layer: 0
   m_Name: DroneGenerator
   m_TagString: Untagged
@@ -332,23 +332,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1444749551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444749550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b9af4d89f9652449de72939a1a6f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dronePrefab: {fileID: 6281934635052164349, guid: a7706cc0effb99949963305899b2354d, type: 3}
-  playerTransform: {fileID: 2104811670}
-  maxDrones: 70
-  spawnInterval: 0.5
-  spawnDistance: 10
 --- !u!4 &1444749552
 Transform:
   m_ObjectHideFlags: 0
@@ -364,6 +347,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444749553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444749550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b9af4d89f9652449de72939a1a6f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dronePrefab: {fileID: 6281934635052164349, guid: a7706cc0effb99949963305899b2354d, type: 3}
+  playerTransform: {fileID: 2104811670}
+  maxDrones: 7
+  spawnInterval: 0.5
+  spawnDistance: 10
+  minDroneDistance: 2
 --- !u!1 &2104811669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,7 +2236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9014170784173530824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.082, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
