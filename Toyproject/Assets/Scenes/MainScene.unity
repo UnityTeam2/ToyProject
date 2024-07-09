@@ -1520,6 +1520,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 70574179070577366, guid: a7706cc0effb99949963305899b2354d, type: 3}
+      propertyPath: maxInstances
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70574179070577366, guid: a7706cc0effb99949963305899b2354d, type: 3}
+      propertyPath: spawnInterval
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6281934635052164349, guid: a7706cc0effb99949963305899b2354d, type: 3}
       propertyPath: m_Name
       value: Drone

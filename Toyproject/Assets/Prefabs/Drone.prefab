@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 6281934635048747355}
   - component: {fileID: 6281934635057345913}
   - component: {fileID: -4362115795775508743}
+  - component: {fileID: 70574179070577366}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Target
@@ -335,6 +336,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
+--- !u!114 &70574179070577366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281934635052164349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001e31ec62b93ff4cbaec53b8c8f77e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6281934635052164349}
+  spawnPoint: {fileID: 6281934635052433331}
 --- !u!1 &6281934635052168731
 GameObject:
   m_ObjectHideFlags: 0
