@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
     private Coroutine firingCoroutine;
     private float fireRate = 0.1f;
 
-    private bool canPlayAudio = true;
+    //private bool canPlayAudio = true;
 
     public void StartFiring()
     {
