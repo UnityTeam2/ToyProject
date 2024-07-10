@@ -336,7 +336,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6281934635057345913
 Rigidbody:
@@ -366,13 +366,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58eb82610259d7f44a537f4399ef0e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 50
   bulletPrefab: {fileID: 3817627023817441617, guid: 3087d3ca9f0d8714b85d35152ab3dbc7, type: 3}
   firePoint: {fileID: 3322342715863021944}
-  areaMin: {x: 214.29001, y: -5.42709, z: 232.32521}
-  areaMax: {x: 244.089, y: 16.435911, z: 234.0682}
-  maxSpeed: 5
-  maxAcceleration: 10
+  target: {fileID: 0}
+  destructionParticles: {fileID: 19816518, guid: b28de64462790a348906ef76f018f700, type: 3}
+  areaMin: {x: 223.55309, y: 4.024025, z: 221.45084}
+  areaMax: {x: 245.84308, y: 12.074026, z: 240.15085}
+  smoothTime: 0.5
 --- !u!1 &6281934635052168731
 GameObject:
   m_ObjectHideFlags: 0

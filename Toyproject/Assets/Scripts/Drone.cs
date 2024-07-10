@@ -7,10 +7,11 @@ public class Drone : MonoBehaviour
     public float HP = 100;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    private Transform target;
+    public Transform target;
     private Vector3 targetPosition;
     public delegate void DroneDestroyed();
     public event DroneDestroyed OnDestroyed;
+    public ParticleSystem destructionParticles;
 
     public Vector3 areaMin; 
     public Vector3 areaMax; 
@@ -51,9 +52,9 @@ public class Drone : MonoBehaviour
             if (target != null)
             {
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                Rigidbody rb = bullet.GetComponent<Rigidbody>();
-                if (rb != null)
-                    rb.AddForce(firePoint.forward * 70, ForceMode.VelocityChange);
+                Rigidbody rb = bullet.GetComponentInChildren<Rigidbody>();
+                Vector3 directionToTarget = (target.position - firePoint.position).normalized;
+                rb.velocity = directionToTarget * 70;
                 Destroy(bullet, 5);
             }
             yield return new WaitForSeconds(3);
@@ -65,8 +66,8 @@ public class Drone : MonoBehaviour
         HP -= damage;
         if (HP <= 0)
         {
-            if (OnDestroyed != null)
-                OnDestroyed.Invoke();
+            Instantiate(destructionParticles, transform.position, Quaternion.identity);
+            OnDestroyed.Invoke();
             Destroy(gameObject);
         }
     }
