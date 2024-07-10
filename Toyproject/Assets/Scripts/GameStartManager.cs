@@ -4,53 +4,64 @@ using UnityEngine.UI;
 
 public class GameStartManager : MonoBehaviour
 {
-    public Button startButton;
-    public Button stopButton;
+    public Button toggleButton;
+    private Text buttonText;
+
+    private bool isGameRunning = false;
 
     void Start()
     {
-        // 처음 시작할 때 게임을 일시 정지 상태로 설정
+
         Time.timeScale = 0f;
 
-        if (startButton != null)
+        if (toggleButton != null)
         {
-            startButton.onClick.AddListener(OnStartButtonClick);
+            buttonText = toggleButton.GetComponentInChildren<Text>();
+            if (buttonText != null)
+            {
+                buttonText.text = "Start Game";
+            }
+
+            toggleButton.onClick.AddListener(OnToggleButtonClick);
         }
         else
         {
-            Debug.LogError("Start Button is not assigned.");
+            Debug.LogError("Toggle Button is not assigned.");
         }
+    }
 
-        if (stopButton != null)
+    void OnToggleButtonClick()
+    {
+        if (isGameRunning)
         {
-            stopButton.onClick.AddListener(OnStopButtonClick);
+            StopGame();
         }
         else
         {
-            Debug.LogError("Stop Button is not assigned.");
+            StartGame();
         }
-    }
-
-    void OnStartButtonClick()
-    {
-        StartGame();
-    }
-
-    void OnStopButtonClick()
-    {
-        StopGame();
     }
 
     void StartGame()
     {
-        // 게임을 재생 상태로 전환
+
         Time.timeScale = 1f;
+        isGameRunning = true;
+        if (buttonText != null)
+        {
+            buttonText.text = "Stop Game";
+        }
     }
 
     void StopGame()
     {
-        // 게임을 일시 정지 상태로 전환
+
         Time.timeScale = 0f;
+        isGameRunning = false;
+        if (buttonText != null)
+        {
+            buttonText.text = "Start Game";
+        }
     }
 }
 

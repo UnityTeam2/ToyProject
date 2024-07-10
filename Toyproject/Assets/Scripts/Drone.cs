@@ -14,6 +14,8 @@ public class Drone : MonoBehaviour
         if (HP < 0)
         {
             Destroy(gameObject);
+
+            // 점수 상속
             ScoreManager.instance.AddScore(50);
         }
     }
