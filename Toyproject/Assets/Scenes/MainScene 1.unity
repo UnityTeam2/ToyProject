@@ -352,8 +352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 785049726}
   - component: {fileID: 785049727}
+  - component: {fileID: 785049728}
   m_Layer: 0
-  m_Name: ScoreManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +387,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cf9502c856254cad2951b4eaef19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1508706485}
+--- !u!114 &785049728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785049724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd424c58e29f1b5469236e66d54b5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleButton: {fileID: 1372311083}
 --- !u!4 &807834278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8429981633443581382, guid: 6c8af5c8012f01440af6cb2bc3eb987c, type: 3}
