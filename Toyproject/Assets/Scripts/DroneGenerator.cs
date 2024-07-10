@@ -7,7 +7,6 @@ public class DroneGenerator : MonoBehaviour
     public GameObject dronePrefab;
     public Transform playerTransform;
     private int maxDrones = 4;
-    private float spawnInterval = 0.5f;
 
     private List<GameObject> activeDrones = new List<GameObject>();
 
@@ -20,7 +19,7 @@ public class DroneGenerator : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(0);
             if (activeDrones.Count == 0)
             {
                 maxDrones++;
